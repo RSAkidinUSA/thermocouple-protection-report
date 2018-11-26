@@ -124,7 +124,7 @@ A final mistake in our approach was the assumption that interference targeted at
 
 \section{Software Implementation}\label{swi}
 \subsection{Model Creation}\label{model-creation}
-Both the simulation as well as the controller rely on a steady-state model of the thermocouple to produce realistic looking values. To do this, we used our K-Type thermocouple as a sample source for a statistical model. First, we took continuous reading over a half hour where the thermocouple and MAX31856 were at room temperature. Using Mathematica, we fit a distribution to the samples and created the inverse \ac{cdf} \cref{inverse-cdf-tcouple}. Through the inverse \ac{cdf} sampling method, we could then use the resulting function as the source for our simulation. 
+Both the simulation as well as the controller rely on a steady-state model of the thermocouple to produce realistic looking values. To do this, we used our K-Type thermocouple as a sample source for a statistical model. First, we took continuous reading over a half hour where the thermocouple and MAX31856 were at room temperature. Using Mathematica \cref{steady-state-model-code}, we fit a distribution to the samples and created the inverse \ac{cdf} \cref{inverse-cdf-tcouple}. Through the inverse \ac{cdf} sampling method, we could then use the resulting function as the source for our simulation. 
 
 \begin{equation}\label{inverse-cdf-tcouple}
 \begin{split}
