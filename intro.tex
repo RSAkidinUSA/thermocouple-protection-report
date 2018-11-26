@@ -17,6 +17,8 @@ To discuss cybersecurity of any system, we must understand its architecture. Thr
 
 Thermocouple is an electric device that utilizes Seebeck effect to measure temperatures at the junction of two dissimilar metals/wires (\cref{fig:Thermocouple}). No power consumption, cost-effectiveness and reasonable accuracy makes K-type thermocouples industry-standard temperature-measuring method \cite{Duff10}. Unfortunately, due to microvolt-level signal changes (~40$\mu$V/\textdegree{}C in K-type), thermocouples are quite susceptible to \ac{emi}/\ac{rfi} \cite{Smalcerz2013,Astm93}. \ac{emi} in this case is any undesirable effects of electromagnetic, electric and magnetic fields, which can degrade the quality of the system due to distortion of the useful signal \cite{Getz96}. This means that without proper physical protection or signal filtering (analog and/or digital) such sensors can be vulnerable to stray noise or a range of intended physical attacks. While proper shielding and dedicated filters can greatly reduce such interference, they can also make an otherwise cheap and robust sensors quite costly and complex. 
 
+\subsubsection{Electromagnetic vulnerabilities}
+
 To test the susceptibility of thermocouple sensors to electromagnetic vulnerabilities, we experimented with one of the possible physical attacks - inducing voltage in the thermocouple wires. Generally, there are two ways in which electromagnetic fields can significantly skew the thermocouple readings: ``induction heating of the thermoelements and induced voltage in the thermocouple wires'' \cite{Omega17}. Heat induction happens at very high amplitudes or high frequencies, when induced currents from alternating magnetic field heat the thermoelement itself, thus affecting the measurement readings. Inducing voltage in thermocouple wires on the other hand, does not require a large field to make any alteration to the temperature output. Since thermocouples measure microvolt-level signal changes, inducing even a small voltage in thermocouple wires can affect the accuracy of the readings. Electromagnetic induction in this case can be explained using Faraday's law of induction \cref{fig:Thermocouple}, which states that ``induced electromotive force (i.e. voltage) in any closed circuit is equal to the rate of change of the magnetic flux enclosed by the circuit'' \cite{Jordan68}. 
 
 \begin{equation}
@@ -46,47 +48,3 @@ There are few common solutions to general \ac{emi}/\ac{rfi} problem, like \ac{rf
 This paper is organized as follows. In \cref{hwi}, we describe in detail our experiment with one of the transduction attacks on K-type thermocouples. \cref{swi} focuses on our signal filter application, which was implemented in software and can potentially help thwart such attacks. \cref{disc} includes a discussion and analysis of our experiment and simulation results. In \cref{fut}, we look at the possible next steps for this project, such as alternative transduction attacks and some potential improvements to our countermeasure implementation. A brief conclusion is given in \cref{conc}.
 
 
-
-%\subsubsection{Privacy}
-
-%\subsubsection{Hardware related issues}
-
-% Types of issues
-
-
-
-% Examples
-
-
-
-%\subsection{Proposed Method}
-
-%\subsubsection{Interference}
-
-% EM
-
-
-
-% RF
-
-
-
-% Induction
-
-
-
-% Equations
-
-
-
-%\subsubsection{Software}
-
-% Model
-
-
-
-% Guard Logic
-
-
-
-% Response
