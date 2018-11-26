@@ -6,14 +6,14 @@ The ability of ``things'' to connect and interact with each other over the Inter
 
 To discuss cybersecurity of any system, we must understand its architecture. Three-layer model is one of the most commonly used \ac{iot} architecture models. The three comprehensive layers/levels in this model are: perception layer, network layer and application layer \cite{Mendez17,Deogirikar17,Krishna17}. Perception layer is responsible for reliable collection of data from various sensors. Perception layer is often built using \ac{rfid} tags and \acp{usn}, which help identify objects and obtain any necessary environmental information \cite{Devera14,Deng12}. Network layer must provide ubiquitous access and reliably transfer any data collected at perception layer. Network layers primarily use wireless communication standards like ZigBee, BLE, Bluetooth (WPAN) and WiFi (WLAN). Application layer is any information processing system that stores and analyzes the received information to appropriately manage an application or a service \cite{Yang17}. In context of cybersecurity each layer can be viewed as separate attack surface with unique vulnerabilities and exploits. Moreover, the interconnectedness of \ac{iot} devices at each layer means that every insufficiently protected device connected to the network can affect the overall level of safety and sustainability of the whole \ac{iot} system. This paper mainly focuses on the perception layer and physical attacks, as we propose a transduction attack on K-type thermocouple sensors and a possible software-based countermeasure. 
 
-\subsection{Thermocouple sensors}
-
-\begin{figure}
+\begin{figure} [h]
     \centering
     \includegraphics[width=\linewidth]{pictures/TC.png}
     \caption{Fundamental thermocouple \cite{Ismail17}}
     \label{fig:TCouple}
 \end{figure}
+
+\subsection{Thermocouple sensors}
 
 Thermocouple is an electric device that utilizes Seebeck effect to measure temperatures at the junction of two dissimilar metals/wires (\cref{fig:Thermocouple}). No power consumption, cost-effectiveness and reasonable accuracy makes K-type thermocouples industry-standard temperature-measuring method \cite{Duff10}. Unfortunately, due to microvolt-level signal changes (~40$\mu$V/\textdegree{}C in K-type), thermocouples are quite susceptible to \ac{emi}/\ac{rfi} \cite{Smalcerz2013,Astm93}. \ac{emi} in this case is any undesirable effects of electromagnetic, electric and magnetic fields, which can degrade the quality of the system due to distortion of the useful signal \cite{Getz96}. This means that without proper physical protection or signal filtering (analog and/or digital) such sensors can be vulnerable to stray noise or a range of intended physical attacks. While proper shielding and dedicated filters can greatly reduce such interference, they can also make an otherwise cheap and robust sensors quite costly and complex. 
 
@@ -31,10 +31,10 @@ N - number of coil turns
 \end{split}
 \end{equation}
 
-\begin{figure}
+\begin{figure}[h]
     \centering
     \includegraphics[width=\linewidth]{pictures/FLaw.png}
-    \caption{Basic transformer (function by applying Faraday’s law of induction) \cite{Flap96}}
+    \caption{Basic transformer (function by applying Faraday law of induction) \cite{Flap96}}
     \label{fig:Transformer}
 \end{figure}
 
