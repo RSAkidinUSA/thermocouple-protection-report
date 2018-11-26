@@ -1,0 +1,35 @@
+%% AMS-LaTeX Created with the Wolfram Language for Students - Personal Use Only : www.wolfram.com
+
+\usepackage{amsmath, amssymb, graphics, setspace}
+
+\begin{doublespace}
+\noindent\(\pmb{\text{data} = \text{Flatten}[\text{Import}[\text{{``}G:$\backslash \backslash $Team Drives$\backslash \backslash $ECE 5560 Fall 2018$\backslash
+\backslash $tc$\_$output$\backslash \backslash $tc2.csv{''}},\text{{``}Data{''}}]]}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\pmb{\text{distro} = \text{FindDistribution}@\text{data}}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\text{LogisticDistribution}[23.2325,0.0620762]\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\pmb{\text{nextt}[\text{x$\_$},\text{y$\_$}]=\text{InverseCDF}[\text{LogisticDistribution}[x,0.0620762],y]}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\text{ConditionalExpression}\left[
+\begin{array}{ll}
+ \{ & 
+\begin{array}{ll}
+ x-0.0620762 \text{Log}\left[-1+\frac{1}{y}\right] & 0<y<1 \\
+ -\infty  & y\leq 0 \\
+ \infty  & \text{True} \\
+\end{array}
+ \\
+\end{array}
+,0\leq y\leq 1\right]\)
+\end{doublespace}
+
