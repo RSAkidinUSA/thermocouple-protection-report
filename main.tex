@@ -1,4 +1,4 @@
-\documentclass[sigconf,numbers,sort&compress]{acmart}
+\documentclass[sigconf,numbers,sort&compress,colorlinks]{acmart}
 
 \usepackage{booktabs} % For formal tables
 \usepackage{acro}
@@ -98,8 +98,6 @@
 
 \maketitle
 
-\printacronyms[include-classes=acron,name=List of Acronyms]
-
 \input{intro.tex}
 
 \input{body.tex}
@@ -112,5 +110,7 @@
 \appendix
 \input{code.tex}
 \input{tc_model2.tex}
+\section{List of Acronyms}
+\printacronyms[include-classes=acron, name=]
 
 \end{document}

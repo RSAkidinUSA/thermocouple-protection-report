@@ -140,16 +140,15 @@ y \text{- Random number (0, 1]}
 \subsection{Controller}
 To try to mitigate the effects of induced errors a rolling average was implemented in \cref{thermocouple-controller}. In addition, an upper bound and lower bound for the allowable values of the thermocouple were implemented; if the value read from the thermocouple is outside of this range, the model discussed in \cref{model-creation} is used to calculate an approximate valid value to be stored in the list of values used to calculate the rolling average.
 
+The controller code can be run on either an Arduino or with the simulator included. This code is shown in \cref{thermocouple-controller}. All of the code written for this design and simulator, as well as a Makefile and README of how to use it can be found on github  \href{https://github.com/RSAkidinUSA/tc-volt-check}{here}\footnote{https://github.com/RSAkidinUSA/tc-volt-check}.
+
 \subsection{Simulation}
 To effectively simulate the hardware that was tested several things were needed. Firstly the simulator needed to emulate the functionality of the MAX32 thermocouple that was interfaced with by the arduino. Secondly, the simulator needed the ability to read a series of temperature values from an input file and correctly pass those along to the controller. Following proper implementation of this, functionality was added to include the ability for the simulator to modify the values that were read from the input file to simulate a thermocouple that was being attacked. This was done by forcing the values to either a lower bounded range or an upper bounded range, emulating the extreme voltages that might be induced in the device. This code is available in \cref{thermocouple-simulator}. \Cref{thermocouple-simulator-h} is the header file used to define some of the values used in the simulator.
-
-\section{Discussion}\label{disc}
-The controller code can be run on either an Arduino or with the simulator included. This code is shown in \cref{thermocouple-controller}. All of the code written for this design and simulator, as well as a Makefile and README of how to use it can be found on \href{https://github.com/RSAkidinUSA/tc-volt-check}{github}.
 
 \section{Future Work}\label{fut}
 Future work would focus primarily on expanding the attack surfaces that were used for interference. As discussed in the previous section, the frequency response of the breakout circuit of the MAX31856 prevented high frequencies from being effective. In addition, alternate parts of the system need to be probed for attacks, such as the MAX31856 controller or the cold junction temperature sensor.
 
-Exploring lower frequencies ranging from 10HZ – 10KHz would be a good staring point for future experiments. Simulation showed that this frequency range had the best response to \ac{ac} signals; although still negative (\cref{fig:BODE}). Evidence that these frequencies have worked in other projects is shown in \cite{Chakraborty82,Smalcerz2013}.
+Exploring lower frequencies ranging from 10HZ – 10KHz would be a good staring point for future experiments. Simulation showed that this frequency range had the best response to \ac{ac} signals; although still negative \cref{fig:BODE}. Evidence that these frequencies have worked in other projects is shown in \cite{Chakraborty82,Smalcerz2013}.
 
 Alternate emitters should also be explored. As we used a single inductor design for our emitters, we failed to explore the options that differing configurations, numbers of emitters, and inductor designs could provide. In addition, resonant and propagation interference from RF signals rather than electromagnetic inductive interference should be explored as alternate ways to create signals on the thermocouple.
 
