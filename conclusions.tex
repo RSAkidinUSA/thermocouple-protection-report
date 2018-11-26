@@ -1,0 +1,12 @@
+\section{Conclusions}\label{conc}
+We explored \ac{iot} security issues by focusing on mitigating hardware-based attacks on the sensors that a device may rely on. A thermocouple was chosen for our experiments due to its susceptibility to \ac{emi} based attacks. Using a simple setup of a function generator and inductors, we were able to produce an \ac{ac} signal on the thermocouple at 47MHz. However, this signal did not translate to the sensor producing faulty values due to dampening in the sensor circuitry. 
+
+As a mitigation to this and similar attacks, we created a software controller that detected when extreme values that are likely produced from interference. The controller would then use a steady-state model of the thermocouple in place of the faulty values until the interference subsided. In addition, the controller was able to detect sharp temperature changes and anneal them in order to ignore random interference events.
+
+In the future, work needs to be done in exploring other attack vectors in the system. These include using alternate interference frequencies, more inductor designs, and exploits on other parts of the system such as the MAX31856 cold junction temperature sensor. In addition, work can be done with the controller and steady-state model to add robustness.
+
+\begin{acks}
+    The authors would like to thank Dr. Bob Lineberry for providing access to a workspace as well as guidance of knowledgeable faculty to reach out to.
+    
+    The authors would also like to thank Dr. Greg Earle and Dr. Warren Stutzman for their technical guidance in developing a test environment.
+\end{acks}
